@@ -3,13 +3,8 @@ doctype html(lang='en')
 include ./partials/_head.jade
 
 body
-    .site-wrapper
-        .site-wrapper-inner
-            .cover-container
-                .masthead.clearfix
-                    .inner
-                        include ./partials/_nav.jade
-                block content
+    include ./partials/_nav.jade
+    block content
 
     //
         Bootstrap core JavaScript
@@ -21,3 +16,31 @@ body
     script(src='/static/js/bootstrap.js')
     // IE10 viewport hack for Surface/desktop Windows 8 bug
     script(src='/static/js/ie10-viewport-bug-workaround.js')
+
+    // Custom Theme JavaScript
+    script.
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Scrolls to the selected menu item on the page
+        $(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/ ^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+        });

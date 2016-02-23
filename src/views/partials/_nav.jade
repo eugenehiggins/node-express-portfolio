@@ -1,9 +1,19 @@
-h3.masthead-brand Lust for Rock
-nav
-    ul.nav.masthead-nav
-        li.active
-            a(href='#') Home
+// Navigation
+a#menu-toggle.btn.btn-dark.btn-lg.toggle(href='#')
+    i.fa.fa-bars
+nav#sidebar-wrapper
+    ul.sidebar-nav
+        a#menu-close.btn.btn-light.btn-lg.pull-right.toggle(href='#')
+            i.fa.fa-times
+        li.sidebar-brand
+            a(href='#top', onclick='$("#menu-close").click();') Start Bootstrap
         li
-            a(href='#') Features
+            a(href='#top', onclick='$("#menu-close").click();') Home
         li
-            a(href='#') Contact
+            a(href='#about', onclick='$("#menu-close").click();') About
+        li
+            a(href='#services', onclick='$("#menu-close").click();') Services
+        li
+            a(href='#portfolio', onclick='$("#menu-close").click();') Portfolio
+        li
+            a(href='#contact', onclick='$("#menu-close").click();') Contact
