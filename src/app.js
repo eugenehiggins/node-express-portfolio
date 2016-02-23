@@ -5,6 +5,10 @@ var express = require('express'),
 
 var app = express();
 
+var postsList = Object.keys(posts).map(function(value) {
+    return posts[value];
+});
+
 // STATIC
 app.use('/static', express.static(__dirname + '/public'));
 
@@ -24,7 +28,7 @@ app.get('/blog/:title?', function(req, res){
     var title = req.params.title;
     if (title === undefined) {
         res.status(503);
-        res.send("this page is under constructions");
+        res.render('blog', { posts: postsList});
     } else {
         var post = posts[title] || {};
         res.render('post', { post: post});
