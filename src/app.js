@@ -1,14 +1,31 @@
 'use strict';
 
-var express = require('express');
+var express = require('express'),
+    posts = require('./mock/posts.json');
+
 var app = express();
+
+// JADE
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
 
 // ROUTES
 app.get('/', function(req, res){
-    res.send("<h1>Yay express</h1>");
+    console.log(__dirname);
+    res.render('index');
 });
 
-app.get('/blog', function(req, res){
+app.get('/blog/:title?', function(req, res){
+    //debugger;
+
+    var title = req.params.title;
+    if (title === undefined) {
+        res.status(503);
+        res.send("this page is under constructions");
+    } else {
+        var post = posts[title] || {};
+        res.render('post', { post: post});
+    }
 
 });
 
