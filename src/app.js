@@ -5,6 +5,9 @@ var express = require('express'),
 
 var app = express();
 
+// STATIC
+app.use('/static', express.static(__dirname + '/public'));
+
 // JADE
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
