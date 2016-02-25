@@ -18,7 +18,6 @@ app.set('views', __dirname + '/views');
 
 // ROUTES
 app.get('/', function(req, res){
-    console.log(__dirname);
     res.render('index');
 });
 
@@ -28,7 +27,7 @@ app.get('/blog/:title?', function(req, res){
     var title = req.params.title;
     if (title === undefined) {
         res.status(503);
-        res.render('blog', { posts: postsList});
+        res.render('blog2', { posts: postsList});
     } else {
         var post = posts[title] || {};
         res.render('post', { post: post});
