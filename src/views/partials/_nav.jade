@@ -10,13 +10,16 @@ nav#sidebar-wrapper
         li
             a(href='#top', onclick='$("#menu-close").click();') Home
         li
-            a(href='#about', onclick='$("#menu-close").click();') About
-        li
-            a(href='#services', onclick='$("#menu-close").click();') Services
-        li
-            a(href='#portfolio', onclick='$("#menu-close").click();') Portfolio
-        li
-            a(href='#contact', onclick='$("#menu-close").click();') Contact
+            a(href='/blog', onclick= '$("#menu-close")') Blog
+        if path === '/'
+            li
+                a(href='#about', onclick='$("#menu-close").click();') About
+            li
+                a(href='#services', onclick='$("#menu-close").click();') Services
+            li
+                a(href='#portfolio', onclick='$("#menu-close").click();') Portfolio
+            li
+                a(href='#contact', onclick='$("#menu-close").click();') Contact
 //
     #navbar.navbar-collapse.collapse
         ul.nav.navbar-nav

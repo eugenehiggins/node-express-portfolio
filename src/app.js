@@ -18,6 +18,8 @@ app.set('views', __dirname + '/views');
 
 // ROUTES
 app.get('/', function(req, res){
+    var path = req.path;
+    res.locals.path = path;
     res.render('index');
 });
 
@@ -30,6 +32,7 @@ app.get('/blog/:title?', function(req, res){
         res.render('blog2', { posts: postsList});
     } else {
         var post = posts[title] || {};
+        console.log(post);
         res.render('post', { post: post});
     }
 

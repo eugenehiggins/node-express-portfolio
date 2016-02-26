@@ -1,16 +1,26 @@
 extends ./layout.jade
 block content
+    .blog
+        // Page Header
+        // Set your background image for this header on the line below.
+        | the image #{post}
+        - header_style = "background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/" + post.image + "') "
+        header.intro-header(style="#{header_style}")
 
-    section.post
-      .container.text-right
-        a(href="").text-faded view all
-        .row
-          .col-lg-8.col-lg-offset-2.text-center
-            h2.section-heading #{post.title}
-
-            hr.light
-
-            p.text-faded
-              | #{post.description}
-            .article
-              | Fanny pack vinyl put a bird on it, small batch viral migas 8-bit meditation Shoreditch keytar health goth bespoke sustainable. Viral you probably haven't heard of them try-hard ennui, pug Thundercats selfies. Normcore cray health goth, umami ennui beard art party skateboard squid distillery.
+          .container
+            .row
+              .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                .post-heading
+                  h1 #{post.title}
+                  h2.subheading #{post.description}
+                  span.meta
+                    | Posted by
+                    a(href='#') Start Bootstrap
+                    |  on August 24, 2014
+        // Post Content
+        article
+          .container
+            .row
+              .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+                p
+                  | #{post.content}
