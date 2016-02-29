@@ -1,15 +1,50 @@
 h1 {
   font-family: 'Rock Salt', cursive; }
 
+body {
+  font-family: 'Open Sans', sans-serif; }
+  body .navbar-default {
+    background-color: rgba(150, 150, 150, 0.3);
+    color: #fff;
+    text-shadow: 0px 0px 5px black;
+    border: 0; }
+    body .navbar-default .navbar-fixed-top {
+      border-width: 0 0 0; }
+    body .navbar-default .navbar-nav li a {
+      color: #fff; }
+    body .navbar-default .navbar-nav .active a {
+      color: #000;
+      text-shadow: none; }
+    body .navbar-default .container-fluid {
+      display: flex; }
+  body #navbar {
+    margin-left: auto; }
+
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/static/img/gallery/burgerama-fidlar/IMG_6430.JPG") no-repeat scroll center; }
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/static/img/gallery/burgerama-fidlar/IMG_6430.JPG") no-repeat scroll center;
+  background-size: cover; }
   .header .text-vertical-center {
     color: #fff;
-    text-shadow: 0px 0px 14px #5a5a5a; }
+    text-shadow: 0px 0px 14px #5a5a5a;
+    margin-top: 155px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%; }
     .header .text-vertical-center h1 {
-      text-shadow: 0px 0px 14px #5a5a5a; }
+      text-shadow: 0px 0px 14px #5a5a5a;
+      font-size: 3em; }
 
 .blog {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   .blog h3 {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+@media (min-width: 768px) {
+  .header .text-vertical-center {
+    margin-top: 0;
+    width: 60%; }
+    .header .text-vertical-center h1 {
+      font-size: 4.5em; } }
