@@ -3,8 +3,10 @@ $(document).ready(function(){
         $target = $(event.target);
         $parent = $target.parent();
 
-        if ($parent.hasClass('active')) {
-            console.log('active');
+        $active = $('.active');
+        if (!$parent.hasClass('active')) {
+            $active.removeClass('active');
+            $parent.addClass('active');
         }
     });
 });
