@@ -1,0 +1,28 @@
+{"galleries":[
+	{
+		"title":"The Black Lips",
+		"dir":"burgerama-black-lips",
+		"images": {
+			"IMG_5681.JPG",
+			"IMG_5682.JPG",
+			"IMG_5697.JPG",
+			"IMG_5698.JPG",
+			"IMG_5600.JPG",
+			"IMG_5601.JPG",
+			"IMG_5602.JPG"
+		}
+	},
+	{
+		"title":"Bleached",
+		"dir":"burgerama-black-lips",
+		"images": {
+			"IMG_5484.JPG",
+			"IMG_5487.JPG",
+			"IMG_5491.JPG",
+			"IMG_5515.JPG",
+			"IMG_5539.JPG",
+			"IMG_5544.JPG",
+			"IMG_5547.JPG"
+		}
+	}
+]}
