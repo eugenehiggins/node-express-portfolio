@@ -26,45 +26,47 @@ block content
         .container
             .row.text-center
                 .col-lg-10.col-lg-offset-1
-                    h2 Our Services
+                    h2 Galleries
                     hr.small
                     .row
-                        .col-md-3.col-sm-6
-                            .service-item
-                                span.fa-stack.fa-4x
-                                    i.fa.fa-circle.fa-stack-2x
-                                    i.fa.fa-cloud.fa-stack-1x.text-primary
-                                h4
-                                    strong Service Name
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                a.btn.btn-light(href='#') Learn More
-                        .col-md-3.col-sm-6
-                            .service-item
-                                span.fa-stack.fa-4x
-                                    i.fa.fa-circle.fa-stack-2x
-                                    i.fa.fa-compass.fa-stack-1x.text-primary
-                                h4
-                                    strong Service Name
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                a.btn.btn-light(href='#') Learn More
-                        .col-md-3.col-sm-6
-                            .service-item
-                                span.fa-stack.fa-4x
-                                    i.fa.fa-circle.fa-stack-2x
-                                    i.fa.fa-flask.fa-stack-1x.text-primary
-                                h4
-                                    strong Service Name
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                a.btn.btn-light(href='#') Learn More
-                        .col-md-3.col-sm-6
-                            .service-item
-                                span.fa-stack.fa-4x
-                                    i.fa.fa-circle.fa-stack-2x
-                                    i.fa.fa-shield.fa-stack-1x.text-primary
-                                h4
-                                    strong Service Name
-                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                a.btn.btn-light(href='#') Learn More
+                        each gallery in galleries
+                            .col-md-3.col-sm-6
+                            
+                                .service-item
+                                    span.fa-stack.fa-4x
+                                        i.fa.fa-circle.fa-stack-2x
+                                        i.fa.fa-cloud.fa-stack-1x.text-primary
+                                    h4
+                                        strong= gallery.title
+                                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    a.btn.btn-light(href='#') Learn More
+                        //- .col-md-3.col-sm-6
+                        //-     .service-item
+                        //-         span.fa-stack.fa-4x
+                        //-             i.fa.fa-circle.fa-stack-2x
+                        //-             i.fa.fa-compass.fa-stack-1x.text-primary
+                        //-         h4
+                        //-             strong Service Name
+                        //-         p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        //-         a.btn.btn-light(href='#') Learn More
+                        //- .col-md-3.col-sm-6
+                        //-     .service-item
+                        //-         span.fa-stack.fa-4x
+                        //-             i.fa.fa-circle.fa-stack-2x
+                        //-             i.fa.fa-flask.fa-stack-1x.text-primary
+                        //-         h4
+                        //-             strong Service Name
+                        //-         p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        //-         a.btn.btn-light(href='#') Learn More
+                        //- .col-md-3.col-sm-6
+                        //-     .service-item
+                        //-         span.fa-stack.fa-4x
+                        //-             i.fa.fa-circle.fa-stack-2x
+                        //-             i.fa.fa-shield.fa-stack-1x.text-primary
+                        //-         h4
+                        //-             strong Service Name
+                        //-         p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        //-         a.btn.btn-light(href='#') Learn More
                     // /.row (nested)
                 // /.col-lg-10
             // /.row
