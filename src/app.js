@@ -1,13 +1,11 @@
 'use strict';
 
-var express = require('express'),
-    posts = require('./mock/posts.json');
+var express = require('express');
+
+var routes = require('./routes/index');
+var blog = require('./routes/blog');
 
 var app = express();
-
-var postsList = Object.keys(posts).map(function(value) {
-    return posts[value];
-});
 
 // STATIC
 app.use('/static', express.static(__dirname + '/public'));
@@ -17,26 +15,10 @@ app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
 // ROUTES
-app.get('/', function(req, res){
-    var path = req.path;
-    res.locals.path = path;
-    res.render('index');
-});
+app.use('/', routes);
+app.use('/blog', blog);
 
-app.get('/blog/:title?', function(req, res){
-    //debugger;
 
-    var title = req.params.title;
-    if (title === undefined) {
-        res.status(503);
-        res.render('blog2', { posts: postsList});
-    } else {
-        var post = posts[title] || {};
-        console.log(post);
-        res.render('post', { post: post});
-    }
-
-});
 
 // SERVER
 app.listen(3000, function(){
