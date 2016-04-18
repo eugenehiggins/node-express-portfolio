@@ -19,10 +19,11 @@
 			.gallery {
 				display: flex;
 				flex-direction: row;
-				align-items: flex-start;
-				position: absolute;
-				left: 150px;
-				top: 200px;
+				align-items: center;
+				justify-content: center;
+				border: 2px dashed red;
+				width: 80%;
+				margin: 250px auto 0 auto;
 			}
 			.gallery-thumb {
 				width: 200px;
@@ -30,23 +31,52 @@
 				padding: 20px 20px 40px 20px;
 				border: 2px solid black;
 				z-index: 0;
-				margin-left: -200px;
+				/*margin-left: -200px;*/
 				background-color: white;
 			}
-			.gallery-thumb.first {
-				z-index: 1;
-				margin-left: 0;
+
+			.modal-body {
+				display: flex;
+				width: 80%;
+				flex-flow: row wrap;
+				align-items: flex-start;
+				justify-content: space-around;
+				padding: 0 auto 0 auto;
+			}
+
+			.modal-body img {
+
 			}
 		</style>
 	</head>
 	<body>
-			<div class="gallery">
-				<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb first" alt="">
-				<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
-				<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
-				<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
-				<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+		<button type="button" class="gallery btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+			<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+		</button>
+
+		<!-- MODAL !-->
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-large">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Modal Header</h4>
+					</div>
+					
+						<div class="modal-body">
+							<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+							<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+							<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+							<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+							<img src="src/public/img/gallery/burgerama-fidlar/IMG_6417.JPG" class="gallery-thumb" alt="">
+						</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
 			</div>
+		</div>
 		<!-- jQuery -->
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
@@ -56,27 +86,7 @@
 		<script type="text/javascript">
 		jQuery(document).ready(function($) {
 
-			$first = $('#first');
-			var firstPos = $first.position();
-
-			$(".gallery-thumb").not('.first').draggable({
-				drag: function(event,ui){
-					var offset = $(this).offset();
-					console.log("offset: " +offset.left);
-					var position  = $(this).position();
-					console.log("position: " + position.left);
-					console.log("==========================");
-				}
-			});
-
-			$('.gallery-thumb.first').on('mouseover', function(event) {
-				event.preventDefault();
-				/* Act on the event */
-				console.log($(this).prevAll())
-			});
-			// $(".gallery-thumb").on('click', '.selector', function(event) {
-			// 	event.preventDefault();
-			// 	/* Act on the event */
+			$('[data-toggle="popover"]').popover();
 			// });
 
 		});
